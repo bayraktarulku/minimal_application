@@ -82,6 +82,19 @@ class Board(QFrame):
         #     self.board.append(Tetrominoe.NoShape)
         pass
 
+    def timerEvent(self, event):
+        if event.timerId() == self.timer.timerId():
+
+            if self.isWaitingAfterLine:
+                self.isWaitingAfterLine = False
+                self.newPiece()
+            else:
+                # self.oneLineDown()
+                pass
+        else:
+            super(Board, self).timerEvent(event)
+
+
     def newPiece(self):
         '''creates a new shape'''
 
@@ -131,6 +144,29 @@ class Shape(object):
     def shape(self):
         return self.pieceShape
 
+    def setShape(self, shape):
+        table = Shape.coordsTable[shape]
+
+        for i in range(4):
+            for j in range(2):
+                self.coords[i][j] = table[i][j]
+
+        self.pieceShape = shape
+
+    def setRandomShape(self):
+        self.setShape(random.randint(1, 7))
+
+    def x(self, index):
+        return self.coords[index][0]
+
+    def y(self, index):
+        return self.coords[index][1]
+
+    def setX(self, index, x):
+        self.coords[index][0] = x
+
+    def setY(self, index, y):
+        self.coords[index][1] = y
 
 if __name__ == '__main__':
 
