@@ -94,10 +94,7 @@ class Board(QFrame):
         else:
             super(Board, self).timerEvent(event)
 
-
     def newPiece(self):
-        '''creates a new shape'''
-
         self.curPiece = Shape()
         self.curPiece.setRandomShape()
         self.curX = Board.BoardWidth // 2 + 1
@@ -167,6 +164,35 @@ class Shape(object):
 
     def setY(self, index, y):
         self.coords[index][1] = y
+
+    def minX(self):
+        m = self.coords[0][0]
+        for i in range(4):
+            m = min(m, self.coords[i][0])
+
+        return m
+
+    def maxX(self):
+        m = self.coords[0][0]
+        for i in range(4):
+            m = max(m, self.coords[i][0])
+
+        return m
+
+    def minY(self):
+        m = self.coords[0][1]
+        for i in range(4):
+            m = min(m, self.coords[i][1])
+
+        return m
+
+    def maxY(self):
+        m = self.coords[0][1]
+        for i in range(4):
+            m = max(m, self.coords[i][1])
+
+        return m
+
 
 if __name__ == '__main__':
 
