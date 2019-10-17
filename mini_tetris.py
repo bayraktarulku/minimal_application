@@ -63,6 +63,60 @@ class Board(QFrame):
         self.isPaused = False
         self.clearBoard()
 
+    def keyPressEvent(self, event):
+        if not self.isStarted or self.curPiece.shape() == Tetrominoe.NoShape:
+            super(Board, self).keyPressEvent(event)
+            return
+
+        key = event.key()
+
+        if key == Qt.Key_P:
+            self.pause()
+            return
+
+        if self.isPaused:
+            return
+
+        elif key == Qt.Key_Left:
+            self.tryMove(self.curPiece, self.curX - 1, self.curY)
+
+        elif key == Qt.Key_Right:
+            self.tryMove(self.curPiece, self.curX + 1, self.curY)
+
+        elif key == Qt.Key_Down:
+            self.tryMove(self.curPiece.rotateRight(), self.curX, self.curY)
+
+        elif key == Qt.Key_Up:
+            self.tryMove(self.curPiece.rotateLeft(), self.curX, self.curY)
+
+        elif key == Qt.Key_Space:
+            self.dropDown()
+
+        elif key == Qt.Key_D:
+            self.oneLineDown()
+
+        else:
+            super(Board, self).keyPressEvent(event)
+
+    def tryMove(self, newPiece, newX, newY):
+        for i in range(4):
+
+            x = newX + newPiece.x(i)
+            y = newY - newPiece.y(i)
+
+            if x < 0 or x >= Board.BoardWidth or y < 0 or y >= Board.BoardHeight:
+                return False
+
+            if self.shapeAt(x, y) != Tetrominoe.NoShape:
+                return False
+
+        # self.curPiece = newPiece
+        # self.curX = newX
+        # self.curY = newY
+        # self.update()
+
+        return True
+
     def start(self):
         if self.isPaused:
             return
@@ -82,6 +136,22 @@ class Board(QFrame):
         #     self.board.append(Tetrominoe.NoShape)
         pass
 
+    def oneLineDown(self):
+        if not self.tryMove(self.curPiece, self.curX, self.curY - 1):
+            self.pieceDropped()
+
+    def pieceDropped(self):
+        for i in range(4):
+
+            x = self.curX + self.curPiece.x(i)
+            y = self.curY - self.curPiece.y(i)
+            self.setShapeAt(x, y, self.curPiece.shape())
+
+        self.removeFullLines()
+
+        if not self.isWaitingAfterLine:
+            self.newPiece()
+
     def timerEvent(self, event):
         if event.timerId() == self.timer.timerId():
 
@@ -89,7 +159,7 @@ class Board(QFrame):
                 self.isWaitingAfterLine = False
                 self.newPiece()
             else:
-                # self.oneLineDown()
+                self.oneLineDown()
                 pass
         else:
             super(Board, self).timerEvent(event)
@@ -193,6 +263,33 @@ class Shape(object):
 
         return m
 
+    def rotateLeft(self):
+        if self.pieceShape == Tetrominoe.SquareShape:
+            return self
+
+        result = Shape()
+        result.pieceShape = self.pieceShape
+
+        for i in range(4):
+
+            result.setX(i, self.y(i))
+            result.setY(i, -self.x(i))
+
+        return result
+
+    def rotateRight(self):
+        if self.pieceShape == Tetrominoe.SquareShape:
+            return self
+
+        result = Shape()
+        result.pieceShape = self.pieceShape
+
+        for i in range(4):
+
+            result.setX(i, -self.y(i))
+            result.setY(i, self.x(i))
+
+        return result
 
 if __name__ == '__main__':
 
