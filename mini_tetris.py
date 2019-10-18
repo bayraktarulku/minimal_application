@@ -79,12 +79,11 @@ class Board(QFrame):
 
         rowsToRemove.reverse()
 
-
         for m in rowsToRemove:
 
             for k in range(m, Board.BoardHeight):
                 for l in range(Board.BoardWidth):
-                        self.setShapeAt(l, k, self.shapeAt(l, k + 1))
+                    self.setShapeAt(l, k, self.shapeAt(l, k + 1))
 
         numFullLines = numFullLines + len(rowsToRemove)
 
@@ -96,7 +95,6 @@ class Board(QFrame):
             self.isWaitingAfterLine = True
             self.curPiece.setShape(Tetrominoe.NoShape)
             self.update()
-
 
     def shapeAt(self, x, y):
         return self.board[(y * Board.BoardWidth) + x]
@@ -221,6 +219,32 @@ class Board(QFrame):
 
         self.newPiece()
         self.timer.start(Board.Speed, self)
+
+    def pause(self):
+        if not self.isStarted:
+            return
+
+        self.isPaused = not self.isPaused
+
+        if self.isPaused:
+            self.timer.stop()
+            self.msg2Statusbar.emit("paused")
+
+        else:
+            self.timer.start(Board.Speed, self)
+            self.msg2Statusbar.emit(str(self.numLinesRemoved))
+
+        self.update()
+
+    def dropDown(self):
+        newY = self.curY
+        while newY > 0:
+
+            if not self.tryMove(self.curPiece, self.curX, newY - 1):
+                break
+
+            newY -= 1
+        self.pieceDropped()
 
     def clearBoard(self):
         for i in range(Board.BoardHeight * Board.BoardWidth):
