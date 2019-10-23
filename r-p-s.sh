@@ -40,10 +40,12 @@ currentRound=1
 
 while [ $rounds -gt 0 ]; do
   echo "Round: $currentRound"
+
   cpuChosen=$(shuf -i 1-3 -n 1)
   [ "$cpuChosen" == "1" ] && cpuChosen="r"
   [ "$cpuChosen" == "2" ] && cpuChosen="p"
   [ "$cpuChosen" == "3" ] && cpuChosen="s"
+
   echo -n "Rock, Paper or Scissors (r/p/s): "
   read -r playerChosen
   if ! [[ "$playerChosen" =~ $re ]] || [ "${#playerChosen}" != "1" ]; then
@@ -52,6 +54,20 @@ while [ $rounds -gt 0 ]; do
   else
     echo "The Game"
     echo "cpuChosen"
+    [ "$playerChosen" == "r" ] && playerdisplayChosen="Rock"
+    [ "$playerChosen" == "p" ] && playerdisplayChosen="Paper"
+    [ "$playerChosen" == "s" ] && playerdisplayChosen="Scissors"
+
+    [ "$cpuChosen" == "r" ] && cpudisplayChosen="Rock"
+    [ "$cpuChosen" == "p" ] && cpudisplayChosen="Paper"
+    [ "$cpuChosen" == "s" ] && cpudisplayChosen="Scissors"
+
+
+    echo "--------------------------------------------------------------------"
+    echo "You chose $playerdisplayChosen !"
+    echo "CPU chose $cpudisplayChosen !"
+    echo -e "\n"
+
   fi
 done
 
