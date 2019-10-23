@@ -86,6 +86,19 @@ while [ $rounds -gt 0 ]; do
       [ "$cpuChosen" == "r" ] && cpuWin=1
     fi
 
+    if [ "$cpuWin" == "0" ] && [ "$playerWin" == "0" ]; then
+      echo "It's a draw!"
+    elif [ "$playerWin" == 1 ]; then
+      echo "You win!"
+      ((playerScore++))
+    elif [ "$cpuWin" == 1 ]; then
+      echo "Computer wins :("
+      ((cpuScore++))
+    fi
+
+    echo -e "\n"
+    ((rounds--))
+    ((currentRound++))
 fi
 done
 
