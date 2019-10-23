@@ -1,0 +1,47 @@
+████████╗ ██████╗ ██████╗  ██████╗
+╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗
+   ██║   ██║   ██║██║  ██║██║   ██║
+   ██║   ██║   ██║██║  ██║██║   ██║
+   ██║   ╚██████╔╝██████╔╝╚██████╔╝
+   ╚═╝    ╚═════╝ ╚═════╝  ╚═════╝
+---------------------------DESCRIPTION---------------------------
+COPYRIGHT
+    You can use.
+
+NAME
+        todo bash app
+
+DESCRIPTION
+        todo command is a program for adding, listing and deleting
+        todo lists easily with bash.
+
+OPTIONS
+        -a or --add or add
+            add a new todo.
+
+        -d or --delete or delete
+            delete an exsiting todo.
+
+        -h or --help or help
+            show a help page.
+
+        -l or --list or list
+            list all todos.
+
+        -r or --reset or reset
+            delete all todos.
+
+        -s or --search or search
+            search todo with a query.
+
+        -u or --update or update
+            update todo.
+
+VERSION
+        Currently the version of todo is $1.0
+        This repository was created for entertainment purposes.
+
+BUGS
+        Please reports bugs by adding issues on Github repo.
+
+---------------------------October 19, 2015---------------------------
