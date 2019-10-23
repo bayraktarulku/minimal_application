@@ -68,7 +68,25 @@ while [ $rounds -gt 0 ]; do
     echo "CPU chose $cpudisplayChosen !"
     echo -e "\n"
 
-  fi
+    cpuWin=0
+    playerWin=0
+
+    if [ "$playerChosen" == "r" ]; then
+      [ "$cpuChosen" == "s" ] && playerWin=1
+      [ "$cpuChosen" == "p" ] && cpuWin=1
+    fi
+
+    if [ "$playerChosen" == "p" ]; then
+      [ "$cpuChosen" == "s" ] && playerWin=1
+      [ "$cpuChosen" == "r" ] && cpuWin=1
+    fi
+
+    if [ "$playerChosen" == "s" ]; then
+      [ "$cpuChosen" == "p" ] && playerWin=1
+      [ "$cpuChosen" == "r" ] && cpuWin=1
+    fi
+
+fi
 done
 
 echo "That's the game!"
