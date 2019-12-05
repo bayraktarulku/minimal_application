@@ -1,9 +1,9 @@
 ### How u doing?
 #### How does it work ?
 I'm just nonsense on this project. Don't care about me.
-Or
+- Or
 Let's have some fun, Shall we?
-* Don't you want to know your sentences up to your DNA?
+* Don't you want to know your sentences up to its DNA?
 
 ##### inspirational question
 ###### https://stackoverflow.com/questions/7396849/convert-binary-to-ascii-and-vice-versa/
