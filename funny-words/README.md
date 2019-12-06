@@ -2,9 +2,9 @@ Inspired by the funny-words library.
 
 ## Command-line Usage
 ```sh
-funny-words [-n] [-w] [-d]
+funny-words [-n] [-w] [-d] [-l]
 
--l, --language   Selects the language in which words are returned
+-l, --language   Selects the language in which words are returned.
 -n, --number     how many lines of funny words to generate
 -w, --words      how many funny words to generate per line
 -d, --delimiter  what to put between the funny words
@@ -12,48 +12,52 @@ funny-words [-n] [-w] [-d]
 
 ## Command-line Examples
 
-In its purest form funny-words will return a single pair of randomly selected funny words separated by a space.
+* if language = tr
+```Its will return a funny tdk translate```
+* else
+```In its purest form funny-words will return a single pair of randomly
+selected funny words separated by a space.```
 
 ```sh
-$ funny-words
-birthday magic
+$ python3 run.py
+rainbow calculator
 ```
 
 If you feel like being vertically loquacious you can increase the number of pairs returned with `-n, --number`
 
 ```sh
-$ funny-words --number 5
-laughter asphalt
-odour dimple
-oboe rotate
-thinkable flash
-fungus fizzy
+$ python3 funny_words/run.py --number 5
+chalk pecan
+kabob soya
+aardvark stuffing
+sunshine ache
+buzz rotate
 ```
 
 If you feel like being horizontally loquacious you can increase the number of words generated per line with `-w, --words`
 
 ```sh
-$ funny-words --words 4
+$ python3 funny_words/run.py --words 4
 chart squiggle camera spiral
 ```
 
 If spaces are not your cup of tea you can change the delimiter between words with `-d, --delimiter`
 
 ```sh
-$ funny-words --delimiter -
-croissant-nostril
+$ python3 funny_words/run.py --delimiter -
+shadow-magenta
 ```
 
 And, as always, you can mix and match to suit your specific need
 
 ```sh
-$ funny-words --delimiter , --number 6 --words 3
-fuse,bangles,fuzzy
-amazing,magic,burst
-smooch,butter,statistics
-angle,magic,smash
-pasta,amazing,flock
-smash,haberdashery,angle
+$ python3 funny_words/run.py --number 5 --language tr --words 1
+light - yeğni
+happy hour - indirim saatleri
+prime time - altın saatler
+bypass - köprüleme
+panik - ürkü
 ```
+
 
 Thanks TDK for translate.

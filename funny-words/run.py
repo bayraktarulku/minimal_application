@@ -25,7 +25,6 @@ def run():
         help='what to put between the funny words',
         type=str, default=' ')
     args = parser.parse_args()
-    print(args.language)
 
     for n in range(args.number):
         print(build_n_gram(args.language, args.words, args.delimiter))
