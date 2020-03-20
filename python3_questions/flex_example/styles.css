@@ -36,17 +36,17 @@ body {
 
 
 
-.fakeimg {
+.content {
   width: 100%;
   padding: 20px;
   background-color: red;
 }
 
-.fakeimg-hero {
+.content-hero {
   background-color: #d7c9e3;
 }
 
-.fakeimg-sidebar {
+.content-sidebar {
   background-color: #9fc363;
 }
 
@@ -65,11 +65,11 @@ body {
 /* Fake image, just for this example */
 
 
-.fakeimg-main {
+.content-main {
   background-color: #f5c632;
 }
 
-.fakeimg-extra {
+.content-extra {
   background-color: #898989;
 }
 
