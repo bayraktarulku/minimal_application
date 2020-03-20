@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #54d5eb;
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.f-side {
+  flex: 40%;
+  padding: 20px;
+  background-color: #2bb673;
+}
+
+
+
+.fakeimg {
+  width: 100%;
+  padding: 20px;
+  background-color: red;
+}
+
+.fakeimg-hero {
+  background-color: #d7c9e3;
+}
+
+.fakeimg-sidebar {
+  background-color: #9fc363;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.f-main {
+  flex: 20%;
+  padding: 20px;
+  background-color: #f3ccde;
+}
+/* Fake image, just for this example */
+
+
+.fakeimg-main {
+  background-color: #f5c632;
+}
+
+.fakeimg-extra {
+  background-color: #898989;
+}
+
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #fea500;
+  background: #fea500;
+}
