@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Minimal Game</title>
+
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css" />
+    <!-- Material Design Lite -->
+
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <div id="app">
+    <!-- NAVBAR -->
+    <!--<div class="mdl-layout mdl-js-layout"> --> <!-- Sidebarın gizli olma durumu  -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
+            <i id = "tooltip2" class="material-icons"></i>
+            <div class = "mdl-tooltip mdl-tooltip--large" for = "tooltip2">XXX</div>
+          </div>
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title"></span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+              <a class="mdl-navigation__link" href="#" title="About us">
+                <span class="material-icons" style="padding-bottom: 2px;">contact_support</span>
+              </a>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer" style="width:250px; overflow: hidden;">
+          <img style="height: 60px; object-fit: contain;" src="logo.png"/>
+          <nav class="mdl-navigation" style="padding-top: 0;height: 100%;">
+          <div class="menu" v-for="c in categories" style="height: calc(100% - 66px);">
+            <a class="mdl-navigation__link" v-text="c" style="font-size: 16px;"></a>
+          </div>
+        </nav>
+        </div>
+
+        <main class="mdl-layout__content body-color" style="pa">
+          <div v-show="selected == 'pi'" class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text" v-text="selected"></h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="sample3" v-model="text">
+                    <label class="mdl-textfield__label" for="sample3">Text...</label>
+                  </div>
+                </form>
+                <h2 class="mdl-card__title-text" v-text="result"></h2>
+              </div>
+              <div class="mdl-card__actions">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="width: 100%;" @click="search()">
+                  Button
+                </button>
+              </div>
+            </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script defer src="gui_vue.js"></script>
+</html>

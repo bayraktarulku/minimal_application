@@ -1,0 +1,117 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-size: 18px;
+    line-height: 22px;
+    font-family: Helvetica;
+}
+
+.body-color{
+    background-color: #eff3f8 !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+li {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.menu {
+    background: #f5f5f0;
+    width: 100%;
+    height: 200px;
+}
+
+.scrollbar
+{
+    float: right;
+    height: calc(100% - 64px);
+    width: 100%;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+
+.item {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    outline: none;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    line-height: 25px;
+    color: #757575;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.submenu-container {
+    overflow: hidden;
+}
+
+.mdl-textfield {
+    width: 100%;
+}
+
+.demo-card-wide.mdl-card {
+    width: 100%;
+    height: 90%;
+    margin-top: 30px;
+    margin-left: 20px;
+    box-shadow: 0px 15px 15px 0px rgba(90, 116, 148, 0.3);
+}
+.demo-card-wide > .mdl-card__title {
+    color: #5b5b5b;
+    height: 10%;
+    background: #eeeeef;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.mdl-card__supporting-text {
+    width: 100%;
+    padding: 0;
+    height: 100%
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .mdl-chip {
+        width: calc(100% - 32px);
+        margin: 8px;
+        box-sizing: border-box;
+    }
+    .menu-right.open {
+        width: 100%;
+    }
+    .mdl-textfield.mdl-js-textfield {
+        width: calc(100% - 154px);
+    }
+    .demo-card-wide.mdl-card {
+        width: 96%;
+        padding: 0;
+        margin: 6px;
+    }
+
+}
+
+/*For nav button*/
+@media (min-width: 300px) and (max-width: 1025px) {
+    .mdl-layout__header-row .mdl-navigation{
+        display: flex !important;
+    }
+}
+
