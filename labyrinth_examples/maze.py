@@ -38,10 +38,10 @@ class Labyrinth:
                 n = n - translator[i]
             else:
                 break
-        r = r*1.0
-        t = (n*1.0)/translator[i] * 360
-        x = (r+0.5) * cos(radians(t+10))
-        y = (r+0.5) * sin(radians(t+10))
+        r = r * 1.0
+        t = (n * 1.0)/translator[i] * 360
+        x = (r + 0.5) * cos(radians(t + 10))
+        y = (r + 0.5) * sin(radians(t + 10))
         return x*10, y*10
 
     def find(self, parent, i):
@@ -65,10 +65,10 @@ class Labyrinth:
         result = []
         i = 0
         e = 0
-        self.graph = sorted(self.graph,key=lambda item: item[2])
+        self.graph = sorted(self.graph, key=lambda item: item[2])
 
-        parent  =   [i for i in range(self.par)]
-        rank    =   [0 for i in range(self.par)]
+        parent = [i for i in range(self.par)]
+        rank = [0 for i in range(self.par)]
 
         while e < self.par-1 :
 
@@ -77,11 +77,11 @@ class Labyrinth:
             u,v,w = self.graph[i]
             i = i+1
             x = self.find(parent, u)
-            y = self.find(parent ,v)
+            y = self.find(parent, v)
 
             if x != y:
-                e = e+1
-                result.append([u,v,w])
+                e = e + 1
+                result.append([u, v, w])
                 self.union(parent, rank, x, y)
 
         for u,v,weight in result:
@@ -93,31 +93,30 @@ class Labyrinth:
             if i < len(form)-1:
                 if len(form[i+1]) > len(form[i]):
                     for j in range(len(form[i])):
-                        self.graph.append([form[i][j], form[i+1][j*2], random.randint(0,20)])
+                        self.graph.append([form[i][j], form[i+1][j*2], random.randint(0, 20)])
                 else:
                     for j in range(len(form[i])):
-                        self.graph.append([form[i][j], form[i+1][j], random.randint(0,20)])
+                        self.graph.append([form[i][j], form[i+1][j], random.randint(0, 20)])
             for j in range(len(form[i])):
-                self.graph.append([form[i][j], form[i][(j+1) % len(form[i])], random.randint(0,5)])
+                self.graph.append([form[i][j], form[i][(j+1) % len(form[i])], random.randint(0, 5)])
 
     def img(self):
-        image = Image.new("RGB", (self.x, self.y),(0,0,0))
+        image = Image.new('RGB', (self.x, self.y),(0,0,0))
         draw = ImageDraw.Draw(image)
         for mv in self.order:
             (a, b) = mv
-            x1, y1 = self.cart(a,self.ring_sizes)
-            x2, y2 = self.cart(b,self.ring_sizes)
-            draw.line((x1+(self.x/2),y1+(self.y/2),x2+(self.x/2),y2+(self.y/2)), fill=(255,255,255), width=1)
+            x1, y1 = self.cart(a, self.ring_sizes)
+            x2, y2 = self.cart(b, self.ring_sizes)
+            draw.line((x1+(self.x/2), y1+(self.y/2), x2+(self.x/2),y2+(self.y/2)), fill=(255, 255, 255), width=1)
 
         del draw
         image.save('{}.png'.format(argv[1]))
-        print("Total nodes:      {}".format(self.par))
-        print("Dimensions:       {}x{}".format(self.x, self.y))
-        print("Created:          \"{}.png\"".format(argv[1]))
+        print('Total nodes:      {}'.format(self.par))
+        print('Dimensions:       {}x{}'.format(self.x, self.y))
+        print('Created:          \'{}.png\''.format(argv[1]))
 
 
 if __name__ == '__main__':
     s = time()
-    # random.seed("L-A-B-Y-R-I-N-T-H")
     l = Labyrinth(int(argv[2]), int(argv[3]))
     l.img()
