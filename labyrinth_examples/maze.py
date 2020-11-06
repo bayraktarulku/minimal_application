@@ -32,16 +32,21 @@ class Labyrinth:
 
     def cart(self, n, translator):
         r = 1
+        ss = n
         for i in range(len(translator)):
             if n >= translator[i]:
                 r = r + 1
                 n = n - translator[i]
             else:
                 break
+
         r = r * 1.0
         t = (n * 1.0)/translator[i] * 360
         x = (r + 0.5) * cos(radians(t + 10))
         y = (r + 0.5) * sin(radians(t + 10))
+        if ss == 2:
+            print(n, r, t, x, y)
+        # print(x, y)
         return x*10, y*10
 
     def find(self, parent, i):
@@ -83,9 +88,9 @@ class Labyrinth:
                 e = e + 1
                 result.append([u, v, w])
                 self.union(parent, rank, x, y)
-
         for u,v,weight in result:
             self.order.append((u, v))
+        # print(self.o  rder)
 
 
     def init_edges(self, form, size):
@@ -100,10 +105,13 @@ class Labyrinth:
             for j in range(len(form[i])):
                 self.graph.append([form[i][j], form[i][(j+1) % len(form[i])], random.randint(0, 5)])
 
+
     def img(self):
         image = Image.new('RGB', (self.x, self.y),(0,0,0))
         draw = ImageDraw.Draw(image)
+        # print(self.order)
         for mv in self.order:
+            # print(mv)
             (a, b) = mv
             x1, y1 = self.cart(a, self.ring_sizes)
             x2, y2 = self.cart(b, self.ring_sizes)
@@ -111,9 +119,9 @@ class Labyrinth:
 
         del draw
         image.save('{}.png'.format(argv[1]))
-        print('Total nodes:      {}'.format(self.par))
-        print('Dimensions:       {}x{}'.format(self.x, self.y))
-        print('Created:          \'{}.png\''.format(argv[1]))
+        # print('Total nodes:      {}'.format(self.par))
+        # print('Dimensions:       {}x{}'.format(self.x, self.y))
+        # print('Created:          \'{}.png\''.format(argv[1]))
 
 
 if __name__ == '__main__':
