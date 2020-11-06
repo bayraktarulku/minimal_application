@@ -2,8 +2,8 @@
 
 import random
 
-from PyQt5.QtCore import (QLineF, QPointF, QRectF, Qt, QTimer)
-from PyQt5.QtGui import (QBrush, QColor, QPainter, QIntValidator)
+from PyQt5.QtCore import (QRectF, Qt, QTimer)
+from PyQt5.QtGui import (QColor, QIntValidator)
 from PyQt5.QtWidgets import (QApplication, QWidget, QGraphicsView, QGraphicsScene, QGraphicsItem,
                              QGridLayout, QVBoxLayout, QHBoxLayout,
                              QLabel, QLineEdit, QPushButton)

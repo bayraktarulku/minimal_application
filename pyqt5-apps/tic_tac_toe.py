@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 
-from PyQt5.QtCore import (QLineF, QPointF, QRectF, Qt)
-from PyQt5.QtGui import (QBrush, QColor, QPainter)
-from PyQt5.QtWidgets import (QApplication, QGraphicsView, QGraphicsScene, QGraphicsItem,
-                             QGridLayout, QVBoxLayout, QHBoxLayout,
-                             QLabel, QLineEdit, QPushButton)
+from PyQt5.QtCore import (QPointF, QRectF, Qt)
+from PyQt5.QtWidgets import (QApplication, QGraphicsView, QGraphicsScene,
+                             QGraphicsItem)
 
 class TicTacToe(QGraphicsItem):
     def __init__(self):
