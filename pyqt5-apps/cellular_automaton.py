@@ -202,9 +202,6 @@ class MainWindow(QWidget):
             self.timer.stop()
             self.timer = None
 
-    #def keyPressEvent(self, event):
-    #    key = event.key()
-    #    super(MainWindow, self).keyPressEvent(event)
 
 if __name__ == '__main__':
     import sys
