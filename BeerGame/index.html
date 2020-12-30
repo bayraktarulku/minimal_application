@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Drink Game XXX</title>
+
+        <link href="Beer.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="BeerGame.js" defer> </script>
+        <script type="text/javascript" src="Beer.js" defer> </script>
+        <script type="text/javascript" src="BeerClicks.js" defer> </script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+        <div class="jumbotron text-center" id="jumbo">
+            <h1>The pre-party</h1>
+            <p>Select event for each card..<br></p>
+        </div>
+
+        <div class="container-fluid">
+            <div id="start-info">
+                <img src="./Cards/b1pl.png" alt="">
+                <img id="start-img" src="./Cards/b1fv.png" alt="Cards">
+            </div>
+            <div id="play-info">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <h2>Tap a card and select the event for the card.</h2>
+                        <p>or select a default..</p>
+                        <button type="button" class="btn btn-info" id="standard-btn">Standard</button>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-3" id="Ace-div">
+                        <img src="./Cards/3.png" alt="Ace">
+                    </div>
+                    <div class="col-sm-3" id="King-div">
+                        <img src="./Cards/7.png" alt="King">
+                    </div>
+                    <div class="col-sm-3" id="Queen-div">
+                        <img src="./Cards/11.png" alt="Queen">
+                    </div>
+                    <div class="col-sm-3" id="Knight-div">
+                        <img src="./Cards/15.png" alt="Knight">
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-3" id="Ten-div">
+                        <img src="./Cards/19.png" alt="Ten">
+                    </div>
+                    <div class="col-sm-3" id="Nine-div">
+                        <img src="./Cards/23.png" alt="Nine">
+                    </div>
+                    <div class="col-sm-3" id="Eight-div">
+                        <img src="./Cards/27.png" alt="Eight">
+                    </div>
+                    <div class="col-sm-3" id="Seven-div">
+                        <img src="./Cards/31.png" alt="Seven">
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-3" id="Six-div">
+                        <img src="./Cards/35.png" alt="Six">
+                    </div>
+                    <div class="col-sm-4" id="Red-div">
+                        <img class="five-card" src="./Cards/39.png" alt="Five">
+                        <img class="four-card" src="./Cards/43.png" alt="Four">
+                        <img class="three-card" src="./Cards/47.png" alt="Three">
+                        <img class="two-card" src="./Cards/51.png" alt="Two">
+
+                    </div>
+                    <div class="col-sm-4" id="Black-div">
+                        <img class="five-card" src="./Cards/38.png" alt="Five">
+                        <img class="four-card" src="./Cards/42.png" alt="Four">
+                        <img class="three-card" src="./Cards/46.png" alt="Three">
+                        <img class="two-card" src="./Cards/50.png" alt="Two">
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+                <div id="end-info">
+                    <img src="./Cards/b1pl.png" alt="">
+                    <img id="end-img" src="./Cards/b1fv.png" alt="Cards">
+                </div>
+            </div>
+            <div id="play">
+                <div class="row text-center">
+                    <div class="col-sm-12" id="play-div">
+                        <h2 id="play-name">Tap the card to begin</h2>
+                        <h3></h3>
+                        <p></p>
+                        <img id="play-img-side" src="./Cards/b1pl.png" alt="">
+                        <img id="play-img" src="./Cards/b1fv.png" alt="Cards">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
