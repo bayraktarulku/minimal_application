@@ -17,4 +17,4 @@ if len(str1) == len(str2):
     if sorted_str1 == sorted_str2:
         msg = "{} and {} are anagram".format(str1, str2)
 
-    print(msg)
+print(msg)
