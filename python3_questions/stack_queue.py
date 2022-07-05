@@ -21,8 +21,6 @@ class Stack:
 
 # class queue operations (enqueue && dequeue)
 # First-in-First-Out (FIFO) principle.
-
-
 class Queue:
     def __init__(self):
         self.queue = []
