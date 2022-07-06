@@ -4,6 +4,7 @@ A simple todo project create
 #### Denojs
 Install using shell (Linux):
 First step was to install the deno using (Install using shell (Linux))
+
 `curl -fsSL https://deno.land/x/install/install.sh | sh`
 
 To run deno using the deno shortcut; it is necessary to add two files to .zshrc or .bashrc.
