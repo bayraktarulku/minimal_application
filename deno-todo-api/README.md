@@ -29,9 +29,12 @@ Testing your installation
 |--server.ts
 ```
 
-run the server with the following command 
+run the server with the following command
+
 `deno run --allow-net server.ts`
-Open the browser and hit the URL localhost:8080
+
+Open the browser and hit the URL localhost:8000
+
 | API | Method | Description|
 | ------------- | ------------- |------------- |
 | http://localhost:8000/todos/ |	GET |	All todos |
