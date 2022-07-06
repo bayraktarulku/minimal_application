@@ -33,8 +33,8 @@ run the server with the following command
 Open the browser and hit the URL localhost:8080
 | API | Method | Description|
 | ------------- | ------------- |------------- |
-| http://localhost:8080/todos/ |	GET |	All todos |
-| http://localhost:8080/todos/{id} | GET | todo by ID |
-| http://localhost:8080/todos/ | POST | Create New todo |
-| http://localhost:8080/todos/{id} | PUT | Update todo by ID |
-| http://localhost:8080/todos/{id} | DELETE	| Delete todo by ID |
+| http://localhost:8000/todos/ |	GET |	All todos |
+| http://localhost:8000/todos/{id} | GET | todo by ID |
+| http://localhost:8000/todos/ | POST | Create New todo |
+| http://localhost:8000/todos/{id} | PUT | Update todo by ID |
+| http://localhost:8000/todos/{id} | DELETE	| Delete todo by ID |
