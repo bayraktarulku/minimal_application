@@ -1,0 +1,9 @@
+fastapi
+fastapi-pagination
+filelock
+flake8
+uvicorn
+virtualenv
+black
+mypy
+isort
